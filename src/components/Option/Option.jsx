@@ -1,29 +1,19 @@
 import styles from "./Option.module.css";
 
 export default function Option({ updateFeedback, hasFeedback }) {
-  const handleButtonClick = (feedbackType) => {
-    updateFeedback(feedbackType);
-  };
-
   return (
     <div className={styles.option}>
-      <button className={styles.btn} onClick={() => handleButtonClick("good")}>
+      <button className={styles.btn} onClick={() => updateFeedback("good")}>
         Good
       </button>
-      <button
-        className={styles.btn}
-        onClick={() => handleButtonClick("neutral")}
-      >
+      <button className={styles.btn} onClick={() => updateFeedback("neutral")}>
         Neutral
       </button>
-      <button className={styles.btn} onClick={() => handleButtonClick("bad")}>
+      <button className={styles.btn} onClick={() => updateFeedback("bad")}>
         Bad
       </button>
       {hasFeedback && (
-        <button
-          className={styles.btn}
-          onClick={() => handleButtonClick("reset")}
-        >
+        <button className={styles.btn} onClick={() => updateFeedback("reset")}>
           Reset
         </button>
       )}

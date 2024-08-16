@@ -10,11 +10,11 @@ export default function Feedback({
   return (
     <div className={styles.feedback}>
       <ul>
-        <li className="item">Good: {good}</li>
-        <li className="item">Neutral: {neutral}</li>
-        <li className="item">Bad: {bad}</li>
-        <li className="item">Total: {total}</li>
-        <li className="item">Positive: {positivePercentage}%</li>
+        <li className={styles.item}>Good: {good}</li>
+        <li className={styles.item}>Neutral: {neutral}</li>
+        <li className={styles.item}>Bad: {bad}</li>
+        <li className={styles.item}>Total: {total}</li>
+        <li className={styles.item}>Positive: {positivePercentage}%</li>
       </ul>
     </div>
   );
