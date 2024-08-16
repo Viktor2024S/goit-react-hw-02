@@ -1,15 +1,27 @@
 import styles from "./Option.module.css";
-import { useState } from "react";
 
-export default function Option() {
-  const [clicks, setClicks] = useState(0);
-  const updateClicks = () => {};
+export default function Option({ updateFeedback }) {
+  const handleButtonClick = (feedbackType) => {
+    updateFeedback(feedbackType);
+  };
+
   return (
     <div className={styles.option}>
-      <button onClick={updateClicks}>Good</button>
-      <button onClick={updateClicks}>Neutral</button>
-      <button onClick={updateClicks}>Bad</button>
-      <button onClick={updateClicks}>Reset</button>
+      <button className={styles.btn} onClick={() => handleButtonClick("good")}>
+        Good
+      </button>
+      <button
+        className={styles.btn}
+        onClick={() => handleButtonClick("neutral")}
+      >
+        Neutral
+      </button>
+      <button className={styles.btn} onClick={() => handleButtonClick("bad")}>
+        Bad
+      </button>
+      <button className={styles.btn} onClick={() => handleButtonClick("reset")}>
+        Reset
+      </button>
     </div>
   );
 }

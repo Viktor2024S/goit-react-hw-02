@@ -1,14 +1,20 @@
 import styles from "./Feedback.module.css";
 
-export default function Feedback() {
+export default function Feedback({
+  good,
+  neutral,
+  bad,
+  total,
+  positivePercentage,
+}) {
   return (
     <div className={styles.feedback}>
       <ul>
-        <li className="item">Good: {}</li>
-        <li className="item">Neutral: {}</li>
-        <li className="item">Bad: {}</li>
-        <li className="item">Total: {}</li>
-        <li className="item">Positive: {}</li>
+        <li className="item">Good: {good}</li>
+        <li className="item">Neutral: {neutral}</li>
+        <li className="item">Bad: {bad}</li>
+        <li className="item">Total: {total}</li>
+        <li className="item">Positive: {positivePercentage}%</li>
       </ul>
     </div>
   );
