@@ -34,7 +34,7 @@ export default function App() {
     <>
       <Description />
       <Option updateFeedback={updateFeedback} />
-      {totalFeedback > 0 && (
+      {totalFeedback > 0 ? (
         <Feedback
           good={count.good}
           neutral={count.neutral}
@@ -42,6 +42,8 @@ export default function App() {
           total={totalFeedback}
           positivePercentage={positivePercentage}
         />
+      ) : (
+        <p>No feedback yet</p>
       )}
     </>
   );
