@@ -28,12 +28,12 @@ export default function App() {
 
   const totalFeedback = count.good + count.neutral + count.bad;
   const positivePercentage =
-    totalFeedback > 0 && ((count.good / totalFeedback) * 100).toFixed(2);
+    totalFeedback > 0 ? ((count.good / totalFeedback) * 100).toFixed(2) : 0;
 
   return (
     <>
       <Description />
-      <Option updateFeedback={updateFeedback} />
+      <Option updateFeedback={updateFeedback} hasFeedback={totalFeedback > 0} />
       {totalFeedback > 0 ? (
         <Feedback
           good={count.good}

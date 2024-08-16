@@ -1,6 +1,6 @@
 import styles from "./Option.module.css";
 
-export default function Option({ updateFeedback }) {
+export default function Option({ updateFeedback, hasFeedback }) {
   const handleButtonClick = (feedbackType) => {
     updateFeedback(feedbackType);
   };
@@ -19,9 +19,14 @@ export default function Option({ updateFeedback }) {
       <button className={styles.btn} onClick={() => handleButtonClick("bad")}>
         Bad
       </button>
-      <button className={styles.btn} onClick={() => handleButtonClick("reset")}>
-        Reset
-      </button>
+      {hasFeedback && (
+        <button
+          className={styles.btn}
+          onClick={() => handleButtonClick("reset")}
+        >
+          Reset
+        </button>
+      )}
     </div>
   );
 }
