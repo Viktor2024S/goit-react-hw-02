@@ -26,21 +26,23 @@ export default function App() {
     }
   };
 
-  const total = count.good + count.neutral + count.bad;
+  const totalFeedback = count.good + count.neutral + count.bad;
   const positivePercentage =
-    total > 0 ? ((count.good / total) * 100).toFixed(2) : 0;
+    totalFeedback > 0 && ((count.good / totalFeedback) * 100).toFixed(2);
 
   return (
     <>
       <Description />
       <Option updateFeedback={updateFeedback} />
-      <Feedback
-        good={count.good}
-        neutral={count.neutral}
-        bad={count.bad}
-        total={total}
-        positivePercentage={positivePercentage}
-      />
+      {totalFeedback > 0 && (
+        <Feedback
+          good={count.good}
+          neutral={count.neutral}
+          bad={count.bad}
+          total={totalFeedback}
+          positivePercentage={positivePercentage}
+        />
+      )}
     </>
   );
 }
